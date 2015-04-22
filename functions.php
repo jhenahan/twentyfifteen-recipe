@@ -16,7 +16,7 @@ function multibox_microdata_list_render($arr, $item_prop = '') {
         $list_item = '<li>';
     }
     else {
-        $list_item = '<li itemprop="' . $item_prop . '">"';
+        $list_item = '<li itemprop="' . $item_prop . '">';
     }
     foreach ( $arr as $key => $value ) {
         $serialized = maybe_unserialize( $value );
