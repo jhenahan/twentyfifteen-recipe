@@ -36,24 +36,33 @@ get_header(); ?>
                 <div itemprop="description">
                     <?php the_content(); ?>
                 </div>
+                <?php if(isset($recipe_yield)): ?>
                 <div><span
                         itemprop="recipeYield"><?php echo $recipe_yield[ 0 ]?></span>
                     Serving
                 </div>
+                <?php endif; ?>
                 <div>
+                    <?php if(isset($recipe_yield)): ?>
                     Prep Time:
                     <time
                         itemprop="prepTime"><?php echo $recipe_prep_time[ 0 ] ?></time>
                     <br/>
+                    <?php endif; ?>
+                    <?php if(isset($recipe_yield)): ?>
                     Cook Time:
                     <time
                         itemprop="cookTime"><?php echo $recipe_cook_time[ 0 ] ?></time>
                     <br/>
+                    <?php endif; ?>
+                    <?php if(isset($recipe_yield)): ?>
                     Ready In:
                     <time
                         itemprop="totalTime"><?php echo $recipe_total_time[ 0 ] ?></time>
                     <br/>
+                    <?php endif; ?>
                 </div>
+                <?php if(isset($recipe_ingredients)): ?>
                 <div>
                     <h3> Ingredients</h3>
                     <ul>
@@ -64,7 +73,8 @@ get_header(); ?>
                         ?>
                     </ul>
                 </div>
-
+                <?php endif; ?>
+                <?php if(isset($recipe_instructions)): ?>
                 <div itemprop="recipeInstructions">
                     <h3> Directions</h3>
                     <ol>
@@ -73,6 +83,7 @@ get_header(); ?>
                         ?>
                     </ol>
                 </div>
+                <?php endif; ?>
 
                 <div itemprop="nutrition">
                     <span itemscope
